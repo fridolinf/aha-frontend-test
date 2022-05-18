@@ -64,10 +64,7 @@ function CardResult({ searchData, count, total }) {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    // image={data.avater}
-                    image={
-                      "https://cdn.antaranews.com/cache/730x487/2019/11/12/20130419rabiesdog3.jpg"
-                    }
+                    image={data.avater}
                     alt={data.name}
                   />
                 </CardActionArea>
@@ -149,10 +146,7 @@ function CardResult({ searchData, count, total }) {
                   <CardActionArea>
                     <CardMedia
                       component="img"
-                      // image={data.avater}
-                      image={
-                        "https://cdn.antaranews.com/cache/730x487/2019/11/12/20130419rabiesdog3.jpg"
-                      }
+                      image={data.avater}
                       alt={data.name}
                     />
                   </CardActionArea>

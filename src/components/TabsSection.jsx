@@ -99,12 +99,11 @@ function RenderFollower() {
                 <Grid key={i} item md={12} marginBottom="21px">
                   <Stack direction="row">
                     <Grid item md={1.8}>
-                      {/* <img width={30} src={data.avater} alt="img"  /> */}
                       <img
                         width="40px"
                         height="40px"
                         style={{ border: "1px solid #F8F8F8" }}
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkL83mkJ5ZSzQ0j5qansV83VJ2EgYmqHpCw&usqp=CAU"
+                        src={data.avater}
                         alt="img"
                       />
                     </Grid>
@@ -227,12 +226,11 @@ function RenderFollowing() {
             <Grid key={i} item md={12} marginBottom="21px">
               <Stack direction="row">
                 <Grid item md={1.8}>
-                  {/* <img width={30} src={data.avater} alt="img"  /> */}
                   <img
                     width="40px"
                     height="40px"
                     style={{ border: "1px solid #F8F8F8" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkL83mkJ5ZSzQ0j5qansV83VJ2EgYmqHpCw&usqp=CAU"
+                    src={data.avater}
                     alt="img"
                   />
                 </Grid>
