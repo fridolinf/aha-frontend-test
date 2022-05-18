@@ -1,13 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap");
+
+* {
+  font-family: "Ubuntu";
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #181818;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  width: 40px;
+  height: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  margin: 0 auto;
+  margin-top: 35px;
+  letter-spacing: -0.05em;
+  background: linear-gradient(270deg, #ffd25f 0.13%, #ff5c01 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headerMobile {
+  display: none;
+}
+
+.blueCircle {
+  height: 10px;
+  position: absolute;
+}
+
+.drawerBottom {
+  display: block;
+}
+
+.searchClassname {
+  padding-top: 47px;
+}
+
+.infinityScrolMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1441px) {
+  .tabSection {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .blueCircle {
+    display: none;
+  }
+  .headerMobile {
+    display: block;
+  }
+  .mobileResult {
+    display: none;
+  }
+  .infinityScrolMobile {
+    display: block;
+  }
+  .drawerBottom {
+    display: none;
+  }
+  .searchClassname {
+    padding-top: 0;
+  }
+  .headerMobile {
+    margin: 12px 0 27px 2px;
+    letter-spacing: -0.05em;
+    width: 50px;
+    height: 19px;
+    padding-top: 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.05em;
+    background: linear-gradient(270deg, #ffd25f 0.13%, #ff5c01 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
