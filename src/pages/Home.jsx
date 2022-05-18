@@ -28,6 +28,7 @@ function Home() {
         setSearchResult(searchResult);
       }
     });
+    // eslint-disable-next-line
   }, [keyword]);
 
   const getValueSlider = (value) => {
