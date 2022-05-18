@@ -47,13 +47,23 @@ header {
   display: none;
 }
 
-@media only screen and (max-width: 1441px) {
+.onActiveMarks:hover {
+  color: #fff;
+}
+
+.onActiveMarks {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+@media only screen and (max-width: 1440px) {
   .tabSection {
-    display: none;
+    visibility: hidden;
   }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 375px) {
   .blueCircle {
     display: none;
   }

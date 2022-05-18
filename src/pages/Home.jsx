@@ -30,8 +30,27 @@ function Home() {
     });
   }, [keyword]);
 
-  const getValueSlider = (_, value) => {
-    setCountData(value);
+  const getValueSlider = (value) => {
+    switch (value) {
+      case 11.3:
+        setCountData(6);
+        break;
+      case 19.6:
+        setCountData(9);
+        break;
+      case 27.9:
+        setCountData(12);
+        break;
+      case 36.2:
+        setCountData(15);
+        break;
+      case 50:
+        setCountData(50);
+        break;
+      default:
+        setCountData(3);
+        break;
+    }
   };
 
   return (
@@ -141,7 +160,7 @@ function Home() {
         <Grid item md={9} xs={11.3}>
           <header className="headerMobile">LOGO</header>
           <Typography
-            className="search1440"
+            className="searchClassname"
             sx={{
               color: "#ffffff",
               fontSize: "26px",
@@ -157,6 +176,7 @@ function Home() {
           <SliderSize
             totalResult={totalData}
             changeSliderValue={getValueSlider}
+            count={countData}
           />
           <Divider
             sx={{

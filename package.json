@@ -52,6 +52,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.6.2",
+    "rc-slider": "^10.0.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-router-dom": "^6.3.0"
   }

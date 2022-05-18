@@ -1,139 +1,9 @@
-import { Typography, Slider } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Typography } from "@mui/material";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Slider, { Range } from "rc-slider";
 
 function SliderSize({ changeSliderValue, totalResult }) {
-  const marks = [
-    {
-      value: 3,
-      label: "3",
-    },
-    {
-      value: 6,
-      label: "6",
-    },
-    {
-      value: 9,
-      label: "9",
-    },
-    {
-      value: 12,
-      label: "12",
-    },
-    {
-      value: 15,
-      label: "15",
-    },
-    {
-      value: 50,
-      label: "50",
-    },
-  ];
-
-  const CustomSlider = styled(Slider)({
-    color: "rgba(255,255,255,0.5)",
-    height: 8,
-    maxWidth: "718px",
-    "& .MuiSlider-track": {
-      backgroundImage: "linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%)",
-      border: "none",
-    },
-    "& .MuiSlider-thumb": {
-      backgroundColor: "#000",
-      border: "5px solid #FFD25F",
-    },
-    '& .MuiSlider-markLabel[data-index="1"]': {
-      transform: "translateX(980%)",
-    },
-    '& .MuiSlider-markLabel[data-index="2"]': {
-      transform: "translateX(1980%)",
-    },
-    '& .MuiSlider-markLabel[data-index="3"]': {
-      transform: "translateX(2000%)",
-    },
-    '& .MuiSlider-markLabel[data-index="4"]': {
-      transform: "translateX(2000%)",
-    },
-    '& .MuiSlider-markLabel[data-index="5"]': {
-      transform: "translateX(2000%)",
-    },
-    "& .MuiSlider-markLabel": {
-      color: "rgba(255,255,255, 0.5)",
-      margin: 0,
-      "@media (max-width: 376px)": {
-        "&:nth-of-type(6)": {
-          marginLeft: "36px",
-        },
-        "&:nth-of-type(8)": {
-          marginLeft: "82px",
-        },
-        "&:nth-of-type(10)": {
-          marginLeft: "123px",
-        },
-        "&:nth-of-type(12)": {
-          marginLeft: "164px",
-        },
-      },
-    },
-    "& .MuiSlider-markLabelActive": {
-      color: "#fff",
-    },
-    "& .MuiSlider-mark": {
-      display: "none",
-    },
-  });
-  const Aslider = styled(Slider)({
-    color: "rgba(255,255,255,0.5)",
-    height: 8,
-    marginTop: 10,
-    maxWidth: "718px",
-    "& .MuiSlider-track": {
-      backgroundImage: "linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%)",
-      border: "none",
-    },
-    "& .MuiSlider-thumb": {
-      backgroundColor: "#000",
-      border: "5px solid #FFD25F",
-    },
-    "& .MuiSlider-markLabel": {
-      color: "rgba(255,255,255, 0.5)",
-      margin: 0,
-      "&:nth-of-type(6)": {
-        marginLeft: "81px",
-      },
-      "&:nth-of-type(8)": {
-        marginLeft: "162px",
-      },
-      "&:nth-of-type(10)": {
-        marginLeft: "243px",
-      },
-      "&:nth-of-type(12)": {
-        marginLeft: "324px",
-      },
-      "@media (max-width: 376px)": {
-        "&:nth-of-type(6)": {
-          marginLeft: "36px",
-        },
-        "&:nth-of-type(8)": {
-          marginLeft: "82px",
-        },
-        "&:nth-of-type(10)": {
-          marginLeft: "123px",
-        },
-        "&:nth-of-type(12)": {
-          marginLeft: "164px",
-        },
-      },
-    },
-    "& .MuiSlider-markLabelActive": {
-      color: "#fff",
-    },
-    "& .MuiSlider-mark": {
-      display: "none",
-    },
-  });
-
   return (
     <div>
       <Typography
@@ -147,20 +17,44 @@ function SliderSize({ changeSliderValue, totalResult }) {
         <b style={{ fontWeight: 700, fontSize: "48px" }}>{totalResult} </b>
         result
       </Typography>
-      <CustomSlider
-        marks={marks}
-        min={3}
-        max={50}
-        step={null}
-        onChange={changeSliderValue}
-      />
-      <Aslider
-        marks={marks}
-        min={3}
-        max={50}
-        step={null}
-        onChange={changeSliderValue}
-      />
+      <div style={{ maxWidth: "718px" }}>
+        <Slider
+          onChange={changeSliderValue}
+          min={3}
+          max={50}
+          defaultValue={3}
+          marks={{
+            3: <span className="onActiveMarks">3</span>,
+            11.3: <span className="onActiveMarks">6</span>,
+            19.6: <span className="onActiveMarks">9</span>,
+            27.9: <span className="onActiveMarks">12</span>,
+            36.2: <span className="onActiveMarks">15</span>,
+            50: <span className="onActiveMarks">50</span>,
+          }}
+          handleStyle={{
+            border: "5px solid #ffd25f",
+            height: 20,
+            width: 20,
+            marginTop: -9,
+            backgroundColor: "#1b1b1b",
+            "&:hover": {
+              border: "none",
+            },
+          }}
+          step={null}
+          railStyle={{
+            backgroundColor: "#5d5d5d",
+            height: 8,
+            maxWidth: "718px",
+          }}
+          dotStyle={{ display: "none" }}
+          trackStyle={{
+            backgroundImage:
+              "linear-gradient(270deg, #FFD25F 0.13%, #FF5C01 100%)",
+            height: 8,
+          }}
+        />
+      </div>
     </div>
   );
 }

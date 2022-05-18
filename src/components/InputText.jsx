@@ -24,7 +24,7 @@ function InputText({ changeKeyword, keywords }) {
       "&.Mui-focused fieldset": {
         border: "3px solid #FF9B33",
       },
-      "@media (min-width: 1439px)": {
+      "@media (min-width: 1440px)": {
         "& input": {
           marginTop: "8px",
           marginBottom: "30px",
