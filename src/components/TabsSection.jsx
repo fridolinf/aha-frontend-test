@@ -220,7 +220,12 @@ function RenderFollowing() {
     });
   }, []);
   return (
-    <Grid container width="375px" columnSpacing={2.3}>
+    <Grid
+      container
+      width="375px"
+      columnSpacing={2.3}
+      marginTop={{ xs: 1.5, md: 3.5 }}
+    >
       {!loading
         ? dataFollowing?.slice(0, countData)?.map((data, i) => (
             <Grid key={i} item md={12} marginBottom="21px">
@@ -277,7 +282,7 @@ function RenderFollowing() {
             </Grid>
           ))
         : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data, i) => (
-            <Box key={i} sx={{ flexGrow: 1 }}>
+            <Box key={i}>
               <Grid
                 key={i}
                 container

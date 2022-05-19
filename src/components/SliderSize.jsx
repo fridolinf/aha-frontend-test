@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Slider, { Range } from "rc-slider";
 
-function SliderSize({ changeSliderValue, totalResult }) {
+function SliderSize({ changeSliderValue, totalResult, count }) {
   return (
     <div>
       <Typography
@@ -24,12 +24,42 @@ function SliderSize({ changeSliderValue, totalResult }) {
           max={50}
           defaultValue={3}
           marks={{
-            3: <span className="onActiveMarks">3</span>,
-            11.3: <span className="onActiveMarks">6</span>,
-            19.6: <span className="onActiveMarks">9</span>,
-            27.9: <span className="onActiveMarks">12</span>,
-            36.2: <span className="onActiveMarks">15</span>,
-            50: <span className="onActiveMarks">50</span>,
+            3:
+              count === 3 ? (
+                <span style={{ color: "#fff" }}>3</span>
+              ) : (
+                <span>3</span>
+              ),
+            11.3:
+              count === 6 ? (
+                <span style={{ color: "#fff" }}>6</span>
+              ) : (
+                <span>6</span>
+              ),
+            19.6:
+              count === 9 ? (
+                <span style={{ color: "#fff" }}>6</span>
+              ) : (
+                <span>9</span>
+              ),
+            27.9:
+              count === 12 ? (
+                <span style={{ color: "#fff" }}>12</span>
+              ) : (
+                <span>12</span>
+              ),
+            36.2:
+              count === 15 ? (
+                <span style={{ color: "#fff" }}>15</span>
+              ) : (
+                <span>15</span>
+              ),
+            50:
+              count === 50 ? (
+                <span style={{ color: "#fff" }}>50</span>
+              ) : (
+                <span>50</span>
+              ),
           }}
           handleStyle={{
             border: "5px solid #ffd25f",

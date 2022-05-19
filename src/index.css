@@ -47,10 +47,6 @@ header {
   display: none;
 }
 
-.onActiveMarks:hover {
-  color: #fff;
-}
-
 .onActiveMarks {
   font-size: 14px;
   font-weight: 400;
