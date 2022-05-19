@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from "prop-types";
+import NullImages from "../assets/images/brokenImg.png";
 
 function CardResult({ searchData, count, total }) {
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,6 @@ function CardResult({ searchData, count, total }) {
     }
     // eslint-disable-next-line
   }, []);
-
   const [totalData, setTotalData] = useState(total);
   const [countData, setCountData] = useState(count);
   const [hasMore, setHasMore] = useState(true);
@@ -35,6 +35,9 @@ function CardResult({ searchData, count, total }) {
     }
   };
 
+  const handleErrorImages = (e) => {
+    e.target.src = NullImages;
+  };
   return (
     <Grid
       container
@@ -66,6 +69,7 @@ function CardResult({ searchData, count, total }) {
                     component="img"
                     image={data.avater}
                     alt={data.name}
+                    onError={handleErrorImages} //render image if any trouble in connection
                   />
                 </CardActionArea>
                 <Grid marginTop={{ xs: 2.5, md: 1.6 }}>
@@ -148,6 +152,7 @@ function CardResult({ searchData, count, total }) {
                       component="img"
                       image={data.avater}
                       alt={data.name}
+                      onError={handleErrorImages} //render image if any trouble in connection
                     />
                   </CardActionArea>
                   <CardActions>
@@ -181,6 +186,7 @@ function CardResult({ searchData, count, total }) {
             ))
           : searchData !== null
           ? [1, 2, 3].map((data, i) => (
+              // Render Skeleton
               <Grid key={i}>
                 <Card
                   sx={{

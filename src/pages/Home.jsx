@@ -33,7 +33,7 @@ function Home() {
 
   const getValueSlider = (value) => {
     switch (value) {
-      case 11.3:
+      case 11.3: // getting value fromn slider, do like this for custom distance of value inside slider
         setCountData(6);
         break;
       case 19.6:
@@ -137,6 +137,7 @@ function Home() {
               </Typography>
             </Link>
             <div className="blueCircle">
+              {/* Icon for Tags Page */}
               <Circle
                 sx={{
                   color: "#00d1ff",

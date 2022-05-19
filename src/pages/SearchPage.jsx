@@ -69,6 +69,7 @@ function SearchPage() {
             </Typography>
           </Link>
           <div className="blueCircle">
+            {/* Icon for Tags Page */}
             <Circle
               sx={{
                 color: "#00d1ff",

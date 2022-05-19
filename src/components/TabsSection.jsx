@@ -14,6 +14,7 @@ import styled from "@emotion/styled";
 import { getFollower, getFollowing } from "../lib/api/allApi";
 import { ContainedButton, OutlinedButton } from "./AllButtons";
 import InfiniteScroll from "react-infinite-scroll-component";
+import NullImages from "../assets/images/brokenImg.png";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -74,6 +75,10 @@ function RenderFollower() {
     }
   };
 
+  const handleErrorImages = (e) => {
+    e.target.src = NullImages;
+  };
+
   return (
     <Grid
       container
@@ -104,7 +109,8 @@ function RenderFollower() {
                         height="40px"
                         style={{ border: "1px solid #F8F8F8" }}
                         src={data.avater}
-                        alt="img"
+                        alt={data.name}
+                        onError={handleErrorImages} //render image if any trouble in connection
                       />
                     </Grid>
                     <Grid item md={7}>
@@ -219,6 +225,10 @@ function RenderFollowing() {
       setLoading(false);
     });
   }, []);
+
+  const handleErrorImages = (e) => {
+    e.target.src = NullImages;
+  };
   return (
     <Grid
       container
@@ -236,7 +246,8 @@ function RenderFollowing() {
                     height="40px"
                     style={{ border: "1px solid #F8F8F8" }}
                     src={data.avater}
-                    alt="img"
+                    alt={data.name}
+                    onError={handleErrorImages} //render image if any trouble in connection
                   />
                 </Grid>
                 <Grid item md={7}>
@@ -282,6 +293,7 @@ function RenderFollowing() {
             </Grid>
           ))
         : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data, i) => (
+            // Render Skeleton
             <Box key={i}>
               <Grid
                 key={i}

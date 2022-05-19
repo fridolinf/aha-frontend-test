@@ -86,6 +86,7 @@ function TagsPage() {
               </Typography>
             </Link>
             <div className="blueCircle">
+              {/* Icon for Tags Page */}
               <Circle
                 sx={{
                   display: onHome ? "block" : "none",

@@ -1,11 +1,11 @@
 import { Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
 
 function SliderSize({ changeSliderValue, totalResult, count }) {
   return (
-    <div>
+    <>
       <Typography
         sx={{
           color: "white",
@@ -30,6 +30,7 @@ function SliderSize({ changeSliderValue, totalResult, count }) {
               ) : (
                 <span>3</span>
               ),
+            // value on slider change staticaly on home page
             11.3:
               count === 6 ? (
                 <span style={{ color: "#fff" }}>6</span>
@@ -85,7 +86,7 @@ function SliderSize({ changeSliderValue, totalResult, count }) {
           }}
         />
       </div>
-    </div>
+    </>
   );
 }
 
